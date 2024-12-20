@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Rony Almirón</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon/favicon.svg">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <nav class="menu container">
+    <a href="#" class="menu__logo">Rony</a>
+
+    <ul class="menu__links">
+      <li class="menu__item"><a href="#projects">Proyectos</a></li>
+      <li class="menu__item"><a href="#experience">Experiencia</a></li>
+      <li class="menu__item"><a href="#about">Sobre mi</a></li>
+      <li class="menu__item"><a href="#contact">Contacto</a></li>
+      <li class="menu__item">
+        <a href="./assets/CV-Ronaldo-Almirón.pdf" class="btn menu__btn" download="CV-Ronaldo-Almirón.pdf">
+          <img src="./assets/download.svg" alt="download icon">
+          <span>Descargar CV</span>
+        </a>
+      </li>
+    </ul>
+
+    <label for="menu" class="menu__burger">
+      <input type="checkbox" id="menu">
+      <span class="burger-icon">
+        <svg viewBox="0 0 32 32">
+          <path class="line line-top-bottom"
+            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+          </path>
+          <path class="line" d="M7 16 27 16"></path>
+        </svg>
+      </span>
+    </label>
+
+  </nav>
+
+  <header class="header">
+
+
+
+    <section class="hero">
+      <div class="hero__container container">
+        <figure class="hero__image">
+          <img src="./assets/rony.png" alt="hero image">
+        </figure>
+        <div class="hero__info">
+          <h1 class="hero__title">Hola, soy <strong>Ronaldo Almirón</strong></h1>
+          <h2 class="hero__subtitle">Desarrollador Full Stack</h2>
+          <p class="hero__paragraph">+2 años de experiencia en el desarrollo de aplicaciones web y móviles para
+            empresas de distintos tamaños. </p>
+
+          <div class="hero__cta-container">
+            <a href="mailito:rony.almiron.020@gmail.com" class="hero__cta btn" target="_blank" rel="noopener noreferrer"
+              title="Enviarme un correo a rony.almiron.020@gmail.com">
+              <img src="./assets/icon/mail.svg" alt="Link to mail">
+              <span>Contáctame</span>
+            </a>
+            <a href="https://www.linkedin.com/in/ronaldo-almiron/" target="_blank" rel="noopener noreferrer"
+              class="hero__cta btn" title="Visitar el perfil de Ronaldo Almirón en LinkedIn">
+              <img src="./assets/icon/linkedin.svg" alt="Link to linkedin">
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/ronyAlm" target="_blank" rel="noopener noreferrer" class="hero__cta btn"
+              title="Visitar el perfil de Ronaldo Almirón en Github">
+              <img src="./assets/icon/github.svg" alt="Link to github">
+              <span>Github</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </header>
+
+
+  <main class="main ">
+    <section id="projects" class="projects container">
+      <h2 class="projects__title">
+        <img src="./assets/icon/project.svg" alt="projects icon">
+        Proyectos
+      </h2>
+      <div class="projects__container">
+        <article class="project">
+          <figure class="project__image">
+            <img src="./assets/ecospodcast.png" alt="Project 1">
+          </figure>
+          <div class="project__info">
+            <h3 class="project__title">Ecos Podcast</h3>
+            <ul class="project__tags">
+              <li class="project__tag">
+                <img src="./assets/icon/js.svg" alt="Icon of JavaScript">
+                JavaScript
+              </li>
+              <li class="project__tag">
+                <img src="./assets/icon/node.svg" alt="Icon of Node">
+                Node
+              </li>
+              <li class="project__tag">
+                <img src="./assets/icon/express.svg" alt="Icon of Express">
+                Express
+              </li>
+              <li class="project__tag">
+                <img src="./assets/icon/mysql.svg" alt="Icon of MySQL">
+                MySQL
+              </li>
+            </ul>
+            <p class="project__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem suscipit
+              laudantium quas aut nulla. Quas aliquam impedit nam est voluptates maxime laborum.</p>
+            <footer class="project__footer">
+              <a href="https://github.com/ronyAlm/ecospodcast" target="_blank" rel="noopener noreferrer"
+                class="project__link btn" title="Visitar el repositorio de Ecospodcast en Github">
+                <img src="./assets/icon/github.svg" alt="Link to github">
+                <span>Código</span>
+              </a>
+              <a href="https://ecospodcast.vercel.app" target="_blank" rel="noopener noreferrer"
+                class="project__link btn" title="Visitar la demo de Ecospodcast">
+                <img src="./assets/icon/link.svg" alt="Link to vercel">
+                <span>Demo</span>
+              </a>
+            </footer>
+          </div>
+        </article>
+        <article class="project">
+          <figure class="project__image">
+            <img src="./assets/ecospodcast.png" alt="Project 1">
+          </figure>
+          <div class="project__info">
+            <h3 class="project__title">Ecospodcast</h3>
+            <ul class="project__tags">
+              <li class="project__tag">
+                <img src="./assets/icon/js.svg" alt="Icon of JavaScript">
+                JavaScript
+              </li>
+              <li class="project__tag">
+                <img src="./assets/icon/node.svg" alt="Icon of Node">
+                Node
+              </li>
+              <li class="project__tag">
+                <img src="./assets/icon/express.svg" alt="Icon of Express">
+                Express
+              </li>
+              <li class="project__tag">
+                <img src="./assets/icon/mysql.svg" alt="Icon of MySQL">
+                MySQL
+              </li>
+            </ul>
+            <p class="project__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem suscipit
+              laudantium quas aut nulla. Quas aliquam impedit nam est voluptates maxime laborum.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="experience container">
+      <h2 class="experience__title">
+        <img src="./assets/icon/experience.svg" alt="experience icon">
+        Experiencia Laboral
+      </h2>
+      <div class="experience__container">
+        <article class="experience__card">
+          <div class="experience__info">
+            <h3 class="experience__title experience__title--job">Desarrollador Web - Soporte IT</h3>
+            <p class="experience__company">Ministerio de Turismo de Formosa</p>
+            <p class="experience__date">2022 - 2024</p>
+            <p class="experience__description">Durante mi tiempo en el Ministerio de Turismo Formosa, desempeñé el cargo
+              de Desarrollador Web y brindé soporte técnico. Mis responsabilidades incluyeron el desarrollo y
+              mantenimiento de aplicaciones web, así como la solución de problemas y la atención de consultas técnicas.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2 class="about__title">
+        <img src="./assets/icon/about-me.svg" alt="about me icon">
+        Acerca de mi
+      </h2>
+      <div class="about__info">
+        <div class="about__description">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem suscipit laudantium quas aut nulla. Quas
+            aliquam <strong>Ronaldo Almirón</strong>
+            impedit nam est voluptates maxime laborum.
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem suscipit laudantium quas aut nulla. Quas
+            aliquam
+            impedit nam est voluptates maxime laborum.
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem suscipit laudantium quas aut nulla. Quas
+            aliquam
+            impedit nam est voluptates maxime laborum.
+          </p>
+        </div>
+
+        <picture class="about__profile">
+          <img src="./assets/perfil-rony.png" alt="Profile Rony Almirón">
+        </picture>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <section id="contact" class="contact container">
+        <div class="contact__info">
+          <h2 class="contact__title">
+            <img src="./assets/icon/contact.svg" alt="contact icon">
+            Contacto
+          </h2>
+          <p class="contact__description">Si deseas ponerte en contacto conmigo, puedes hacerlo a través de los
+            siguientes medios:</p>
+          <ul class="contact__list">
+            <li class="contact__item">
+              <img src="./assets/icon/mail.svg" alt="Icon of mail">
+              <a href="mailto:rony.almiron.020@gmail.com" class="contact__link">
+                rony.almiron.020@gmail.com</a>
+            </li>
+            <li class="contact__item">
+              <img src="./assets/icon/phone.svg" alt="Icon of phone">
+              <a href="tel:+5493704500000" class="contact__link">
+                +54 9 3704 500000 </a>
+            </li>
+            <li class="contact__item">
+              <img src="./assets/icon/location.svg" alt="Icon of location">
+              <span class="contact__link">Formosa, Argentina</span>
+            </li>
+          </ul>
+          <div class="contact__social">
+            <a href="https://www.linkedin.com/in/ronaldo-almiron/" target="_blank" rel="noopener noreferrer"
+              class="contact__link" title="Visitar el perfil de Ronaldo Almirón en LinkedIn">
+              <img src="./assets/icon/linkedin.svg" alt="Link to linkedin">
+              <span>LinkedIn</span> 
+            </a>
+            <a href="https://github.com/ronyalmiron" target="_blank" rel="noopener noreferrer" class="contact__link"
+              title="Visitar el perfil de Ronaldo Almirón en Github">
+              <img src="./assets/icon/github.svg" alt="Link to github">
+              <span>Github</span>
+            </a>
+          </div>
+        </div>
+        <div class="contact__form">
+          <form action="https://formsubmit.co/rony.almiron.020@gmail.com" method="POST" class="form">
+            <input type="hidden" name="_subject" value="Contacto de Rony Almirón">
+            <input type="hidden" name="_next" value="https://ronyalmiron.com/thanks.html">
+            <input type="text" placeholder="Nombre" name="name" class="form__input">
+            <input type="email" placeholder="Email" name="email" class="form__input">
+            <textarea name="message" placeholder="Mensaje" class="form__textarea"></textarea>
+            <button type="submit" class="form__btn btn">Enviar</button>
+          </form>
+        </div>
+      </section>
+      <div class="footer__copyright">
+        <p>© 2024 Ronaldo Almirón. Algunos derechos reservados.</p>
+      </div>
+
+    </footer>
+  </main>
+
+
+
+
+  <div class="circle one"></div>
+  <div class="circle two"></div>
+
+  <!-- SVG NOISE BACKGROUND -->
+  <svg id="noise">
+    <filter id='noiseFilter'>
+      <feTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch' />
+    </filter>
+  </svg>
+
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
