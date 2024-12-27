@@ -325,6 +325,7 @@
         const recaptchaResponse = grecaptcha.getResponse();
         if (!recaptchaResponse) {
           messageError("Por favor, completá el reCAPTCHA.");
+          console.log('reCAPTCHA no completado');
           return;
         }
 
@@ -339,12 +340,12 @@
                 btnSubmit.innerHTML = 'Enviar <img src="./assets/icon/send.svg" alt="Send icon">';
               }, 3000);
             }
-            // console.log('SUCCESS!', res.status, res.text);
+            console.log('SUCCESS!', res.status, res.text);
           }, (error) => {
             messageError('Ocurrió un error al enviar el mensaje');
             btnSubmit.innerHTML = 'Enviar <img src="./assets/icon/send.svg" alt="Send icon">';
             form.reset();
-            // console.error('FAILED...', error);
+            console.error('FAILED...', error);
           });
 
       });

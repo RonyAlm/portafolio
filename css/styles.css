@@ -1012,4 +1012,6 @@ input[id='menu'] {
     right: 0;
 }
 
-
+.grecaptcha-badge{
+    display: none !important;
+}
