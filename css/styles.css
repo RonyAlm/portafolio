@@ -608,6 +608,7 @@ input[id='menu'] {
     line-height: 1.5;
     color: #f5f5f5;
     opacity: .7;
+    margin-bottom: 1rem;
 
     & strong {
         color: var(--primary-color);
@@ -800,6 +801,12 @@ input[id='menu'] {
 }
 
 .form__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    gap: .5rem;
+    font-weight: 400;
     cursor: pointer;
     font-size: 1.1rem;
     padding: 1rem;
@@ -810,10 +817,27 @@ input[id='menu'] {
     color: #f5f5f5;
     opacity: .7;
     transition: all .3s ease-in-out;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 
     &:hover {
         filter: brightness(1.75);
+    }
+
+    & img {
+        width: 20px;
+    }
+}
+
+.form__error{
+    display: none;
+    gap: .5rem;
+    color: #ff0000;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: .7;
+
+    & img{
+        width: 20px;
     }
 }
 
@@ -901,8 +925,7 @@ input[id='menu'] {
 
     .hero__image {
         order: 2;
-        width: 250px;
-        margin-right: 4rem;
+        width: 600px;
     }
 
     .hero__title {
@@ -959,6 +982,11 @@ input[id='menu'] {
     .hero__container {
         padding-inline: 1rem;
     }
+
+    .hero__image {
+        width: 500px;
+        margin-right: 4rem;
+    }
 }
 
 /* Background effects */
@@ -983,3 +1011,5 @@ input[id='menu'] {
     bottom: 0;
     right: 0;
 }
+
+

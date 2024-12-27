@@ -12,6 +12,8 @@
   <title>Portafolio de Rony Almirón</title>
   <link rel="icon" type="image/svg+xml" href="assets/icon/favicon.svg">
   <link rel="stylesheet" href="./css/styles.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 <body>
@@ -56,8 +58,9 @@
         <div class="hero__info">
           <h1 class="hero__title">Hola, soy <strong>Ronaldo Almirón</strong></h1>
           <h2 class="hero__subtitle">Desarrollador Full Stack</h2>
-          <p class="hero__paragraph">+2 años de experiencia en el desarrollo de aplicaciones web y móviles para
-            empresas de distintos tamaños. </p>
+          <p class="hero__paragraph">+2 años de experiencia en el desarrollo de aplicaciones web modernas, combinando
+            habilidades en backend y frontend. Especializado en JavaScript, React y Node.js, con un enfoque en
+            soluciones escalables e innovadoras.</p>
 
           <div class="hero__cta-container">
             <a href="mailito:rony.almiron.020@gmail.com" class="hero__cta btn" target="_blank" rel="noopener noreferrer"
@@ -188,20 +191,19 @@
       </h2>
       <div class="about__info">
         <div class="about__description">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem suscipit laudantium quas aut nulla. Quas
-            aliquam <strong>Ronaldo Almirón</strong>
-            impedit nam est voluptates maxime laborum.
+          <p>Soy <strong>Ronaldo Emmanuel Almirón</strong>, conocido como Rony. Cuento con un título universitario en
+            <strong>Analista en
+              Tecnología de la Información y Comunicación</strong>, que respalda mi formación sólida en desarrollo de
+            software y
+            tecnología.
+          </p>
+          <p>Tengo más de 2 años de experiencia como desarrollador web, especializándome en JavaScript y frameworks como
+            React y Node.js. Mis habilidades abarcan tanto el backend como el frontend, lo que me permite crear
+            aplicaciones modernas y escalables.
           </p>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem suscipit laudantium quas aut nulla. Quas
-            aliquam
-            impedit nam est voluptates maxime laborum.
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem suscipit laudantium quas aut nulla. Quas
-            aliquam
-            impedit nam est voluptates maxime laborum.
+            Soy apasionado por el aprendizaje continuo y el trabajo en equipo. Mi enfoque está en ofrecer soluciones
+            innovadoras que superen las expectativas. Te invito a explorar mis proyectos y experiencia para conocer más.
           </p>
         </div>
 
@@ -228,6 +230,7 @@
             <img src="./assets/icon/mail.svg" alt="Icon of mail">
             <a href="mailto:rony.almiron.020@gmail.com" class="contact__link">
               rony.almiron.020@gmail.com</a>
+            <!-- <img src="./assets/icon/copy.svg" alt="Copy"> -->
           </li>
           <li class="contact__item">
             <img src="./assets/icon/phone.svg" alt="Icon of phone">
@@ -253,18 +256,25 @@
         </div>
       </div>
       <div class="contact__form">
-        <form action="https://formsubmit.co/rony.almiron.020@gmail.com" method="POST" class="form">
+        <form id="form" class="form">
           <input type="hidden" name="_subject" value="Contacto de Rony Almirón">
-          <!-- <input type="hidden" name="_next" value="https://ronyalmiron.com/thanks.html"> -->
-          <input type="text" placeholder="Nombre" name="name" class="form__input">
-          <input type="email" placeholder="Email" name="email" class="form__input">
-          <textarea name="message" placeholder="Mensaje" class="form__textarea"></textarea>
-          <button type="submit" class="form__btn btn">Enviar</button>
+          <input type="text" id="name" placeholder="Nombre" name="name" class="form__input">
+          <input type="email" id="email" placeholder="Email" name="email" class="form__input">
+          <textarea name="message" id="message" placeholder="Mensaje" class="form__textarea"></textarea>
+          <div class="form__error">
+            <img src="./assets/icon/error.svg" alt="Error icon">
+            <p>Por favor, completá todos los campos.</p>
+          </div>
+          <button type="submit" id="sendBtn" class="g-recaptcha form__btn btn"
+            data-sitekey="6Le6Q6cqAAAAAMSF5am9vjALvhDuGVtAupw4iXdh"
+            data-callback="onSubmit" data-action="submit">Enviar
+            <img src="./assets/icon/send.svg" alt="Send icon">
+          </button>
         </form>
       </div>
     </section>
     <div class="footer__copyright">
-      <p>© 2024 Ronaldo Almirón. Algunos derechos reservados.</p>
+      <p>© 2024. Creado por Rony Almirón.</p>
     </div>
 
   </footer>
@@ -279,8 +289,77 @@
     </filter>
   </svg>
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
 
-  <script src="./js/main.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "TJN6G39z8-PebUZTc",
+      });
+    })();
+  </script>
+  <script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const form = document.getElementById('form');
+
+      const btnSubmit = document.getElementById('sendBtn');
+      const formError = document.querySelector('.form__error');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (!name || !email || !message || email.indexOf('@') === -1) {
+          messageError('Por favor, completá todos los campos.');
+          return;
+        }
+
+        // Verificar si el reCAPTCHA fue completado
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+          messageError("Por favor, completá el reCAPTCHA.");
+          return;
+        }
+
+        btnSubmit.textContent = 'Enviando...';
+
+        emailjs.sendForm('service_t4ajffw', 'template_ohghvs8', this)
+          .then((res) => {
+            if (res.status === 200) {
+              btnSubmit.innerHTML = 'Mensaje enviado correctamente <img src="./assets/icon/check.svg" alt="Send icon">';
+              form.reset();
+              setTimeout(() => {
+                btnSubmit.innerHTML = 'Enviar <img src="./assets/icon/send.svg" alt="Send icon">';
+              }, 3000);
+            }
+            // console.log('SUCCESS!', res.status, res.text);
+          }, (error) => {
+            messageError('Ocurrió un error al enviar el mensaje');
+            btnSubmit.innerHTML = 'Enviar <img src="./assets/icon/send.svg" alt="Send icon">';
+            form.reset();
+            // console.error('FAILED...', error);
+          });
+
+      });
+
+      function messageError(texto) {
+        formError.style.display = 'flex';
+        formError.querySelector('p').textContent = texto;
+        setTimeout(() => {
+          formError.style.display = 'none';
+        }, 4000);
+      }
+
+    });
+
+  </script>
 </body>
 
 </html>
