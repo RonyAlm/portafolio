@@ -12,8 +12,7 @@
   <title>Portafolio de Rony Almirón</title>
   <link rel="icon" type="image/svg+xml" href="assets/icon/favicon.svg">
   <link rel="stylesheet" href="./css/styles.css">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 </head>
 
 <body>
@@ -262,11 +261,10 @@
           <input type="email" id="email" placeholder="Email" name="email" class="form__input">
           <textarea name="message" id="message" placeholder="Mensaje" class="form__textarea"></textarea>
           <div class="form__error">
-            <img src="./assets/icon/error.svg" alt="Error icon">
+            <img src="./assets/icon/exclamation-circle.svg" alt="Error icon">
             <p>Por favor, completá todos los campos.</p>
           </div>
-          <button type="submit" id="sendBtn" class="g-recaptcha form__btn btn"
-            data-sitekey="6Le6Q6cqAAAAAMSF5am9vjALvhDuGVtAupw4iXdh">Enviar
+          <button type="submit" id="sendBtn" class="form__btn btn">Enviar
             <img src="./assets/icon/send.svg" alt="Send icon">
           </button>
         </form>
@@ -304,11 +302,11 @@
     document.addEventListener('DOMContentLoaded', () => {
 
       const form = document.getElementById('form');
-
       const btnSubmit = document.getElementById('sendBtn');
       const formError = document.querySelector('.form__error');
 
       form.addEventListener('submit', (event) => {
+
         event.preventDefault();
 
         const name = document.getElementById('name').value;
@@ -320,31 +318,21 @@
           return;
         }
 
-        // Verificar si el reCAPTCHA fue completado
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-          messageError("Por favor, completá el reCAPTCHA.");
-          console.log('reCAPTCHA no completado');
-          return;
-        }
-
         btnSubmit.textContent = 'Enviando...';
 
-        emailjs.sendForm('service_t4ajffw', 'template_ohghvs8', this)
+        emailjs.sendForm('service_t4ajffw', 'template_ohghvs8', form)
           .then((res) => {
             if (res.status === 200) {
-              btnSubmit.innerHTML = 'Mensaje enviado correctamente <img src="./assets/icon/check.svg" alt="Send icon">';
+              btnSubmit.innerHTML = 'Mensaje enviado correctamente <img src="./assets/icon/check-circle.svg" alt="Send icon">';
               form.reset();
               setTimeout(() => {
                 btnSubmit.innerHTML = 'Enviar <img src="./assets/icon/send.svg" alt="Send icon">';
               }, 3000);
             }
-            console.log('SUCCESS!', res.status, res.text);
           }, (error) => {
             messageError('Ocurrió un error al enviar el mensaje');
             btnSubmit.innerHTML = 'Enviar <img src="./assets/icon/send.svg" alt="Send icon">';
             form.reset();
-            console.error('FAILED...', error);
           });
 
       });
