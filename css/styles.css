@@ -26,6 +26,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -831,7 +832,7 @@ input[id='menu'] {
 }
 
 .form__error {
-    display: flex;
+    display: none;
     gap: .5rem;
     color: #ff0000;
     font-size: 1rem;
