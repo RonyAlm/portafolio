@@ -408,16 +408,29 @@ input[id='menu'] {
 }
 
 .project__image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    /* aspect-ratio: 3 / 2; */
+}
 
 
-    & img {
-        width: 100%;
-        border-radius: 8px;
-        object-fit: cover;
-        object-position: center;
-        aspect-ratio: 3 / 2;
+.project__image img {
+    transition: all .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    /* border-radius: 8px; */
+    object-fit: cover;
+    object-position: center;
+
+    &:hover {
+        transform: scale(1.2);
     }
 }
+
+
+
 
 .project__info {
     display: flex;
@@ -461,7 +474,7 @@ input[id='menu'] {
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.2;
-    /* color: var(--primary-color); */
+    color: var(--primary-color);
 }
 
 .project__description {
@@ -475,6 +488,7 @@ input[id='menu'] {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* flex-wrap: wrap; */
     padding: 1rem 0;
     gap: .7rem;
 }
@@ -979,6 +993,10 @@ input[id='menu'] {
     .contact__form {
         margin-top: 3rem;
         width: 60%;
+    }
+
+    .project__image {
+        border-radius: 8px 0 0 8px;
     }
 }
 
