@@ -612,6 +612,7 @@ input[id='menu'] {
     border: 1px solid #09f;
     /* margin-left: 3rem; */
     margin-inline: auto;
+    padding: 1rem;
 
     & img {
         width: 100%;
