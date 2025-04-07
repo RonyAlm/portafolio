@@ -673,6 +673,7 @@ input[id='menu'] {
 .contact__item {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: 1rem 2rem;
     background-color: #0c101b;
     backdrop-filter: blur(10px);
