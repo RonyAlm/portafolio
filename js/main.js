@@ -1,9 +1,9 @@
 (function () {
     // https://dashboard.emailjs.com/admin/account
     emailjs.init({
-      publicKey: "TJN6G39z8-PebUZTc",
+        publicKey: "NpAxBpo-OCe28oFsg",
     });
-  })();
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
 

@@ -929,7 +929,7 @@ input[id='menu'] {
     /* Projects */
 
     .project__info {
-        padding: 1rem 2rem;
+        padding: 2rem;
     }
 
     /* About */
@@ -1006,4 +1006,34 @@ input[id='menu'] {
 .two {
     bottom: 0;
     right: 0;
+}
+
+.experience__links {
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+.experience__link {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    color: #fff;
+    opacity: .7;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+
+    & img {
+        width: 13px;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
 }
